@@ -8,7 +8,7 @@ export default function Navigation() {
     <nav>
       <div className='flex items-center justify-between pt-7 pb-4 border-b shadow-md bg-white'>
         <div className='flex relative px-8 font-bold'>
-          <strong className='text-2xl'>Indicam</strong>
+          <strong className='text-2xl'>indicam</strong>
           <Image
             className='absolute right-1 bottom-0'
             src={logo}
@@ -38,7 +38,7 @@ export default function Navigation() {
             Projects
           </Link>
           <Link
-            href='/faq'
+            href='/cs/faq'
             className='hover:text-gray-500 hover:underline underline-offset-4'
           >
             FAQ
