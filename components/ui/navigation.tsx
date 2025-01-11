@@ -37,7 +37,7 @@ export default function Navigation() {
           Project
         </Link>
         <Link
-          href='/faq'
+          href='/cs/faq'
           className='hover:text-gray-500 hover:underline underline-offset-4'
         >
           FAQ
