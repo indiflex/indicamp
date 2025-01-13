@@ -24,7 +24,7 @@ type Props = {
     | 'python'
     | 'react'
     | 'spring'
-    | 'sevelte'
+    | 'svelte'
     | 'swift'
     | 'typescript'
     | 'unity'
