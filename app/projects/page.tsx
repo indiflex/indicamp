@@ -1,5 +1,7 @@
-import ProjectCards from './(project-card)/card';
 import ProjectCreateForm from '@/app/projects/project-create-form';
+import ProjectDetail from '@/app/projects/project-detail';
+import { ModalDetail } from '@/components/modal-detail';
+import ProjectCards from './(project-card)/card';
 
 export const metadata = {
   title: 'Shop - Mosaic',
@@ -59,7 +61,10 @@ export default function ProjectsPage() {
           </div>
         </div>
         {/*임시 추가버튼*/}
-        <ProjectCreateForm/>
+        <ProjectCreateForm />
+        <ModalDetail>
+          <ProjectDetail />
+        </ModalDetail>
       </div>
     </div>
   );
