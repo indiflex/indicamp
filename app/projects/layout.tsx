@@ -16,7 +16,6 @@ export default function ProjectsLayout({
         <span className=' flex-grow rounded-xl  bg-blue-500 bg-opacity-10'>
           {children}
         </span>
-        <span className='flex-grow border-4'>{children}</span>
         <span>
           <FlyoutProvider>
             <ProfileSidebar />
