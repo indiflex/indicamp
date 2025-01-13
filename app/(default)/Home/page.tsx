@@ -6,6 +6,7 @@ import Faq from '@/components/faq';
 import Intro from '@/components/intro';
 import Mentor from '@/components/mentor';
 import Price from '@/components/price';
+import TopButton from '@/components/ui/top-button';
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Benefit />
       <Price />
       <Faq />
+      <TopButton />
     </>
   );
 }
