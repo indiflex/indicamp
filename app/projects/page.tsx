@@ -1,5 +1,8 @@
 import { Button } from '@/components/ui/button';
 import ProjectCards from './(project-components)/card';
+import ProjectCreateForm from '@/app/projects/project-create-form';
+import ProjectDetail from '@/app/projects/project-detail';
+import { ModalDetail } from '@/components/modal-detail';
 
 export const metadata = {
   title: 'Projects',
@@ -30,6 +33,11 @@ export default function ProjectsPage() {
             <ProjectCards />
           </div>
         </div>
+        {/*임시 추가버튼*/}
+        <ProjectCreateForm />
+        <ModalDetail>
+          <ProjectDetail />
+        </ModalDetail>
       </div>
     </div>
   );

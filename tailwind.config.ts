@@ -9,12 +9,16 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+    },
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
       },
       backgroundImage: {
-        gradient01: 'url("/images/noisy-gradients.png")',
+        noise01: 'url("/images/noise.jpg")',
       },
       colors: {
         mainblue: ' #1E3A8A',
@@ -65,7 +69,11 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      animation: {
+        shine: 'shine 2.5s',
+      },
       keyframes: {
+        shine: { '100%': { left: '125%' } },
         'code-1': {
           '0%': { opacity: '0' },
           '2.5%': { opacity: '1' },
@@ -101,6 +109,9 @@ const config: Config = {
           '83.75%': { opacity: '1' },
           '97.5%': { opacity: '1' },
           '100%': { opacity: '0' },
+        },
+        gradient: {
+          to: { 'background-position': '200% center' },
         },
       },
     },
