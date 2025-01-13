@@ -1,4 +1,3 @@
-import { hash } from 'bcrypt';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { z } from '@/lib/i18n-zod';
@@ -30,9 +29,5 @@ export function parseZodErrorMessage(error: z.ZodError) {
   return err.message;
 }
 
-export async function hashPassword(passwd: string) {
-  return hash(passwd, 10);
-  // const hashedPassword = await hash(passwd, 10);
-  // console.log('🚀  hashedPassword:', hashedPassword);
-  // return hashedPassword;
-}
+const regHangul = new RegExp(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/);
+export const isHangul = (str: string) => regHangul.test(str);
