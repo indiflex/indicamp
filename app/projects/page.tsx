@@ -1,3 +1,6 @@
+import ProjectCreateForm from '@/app/projects/project-create-form';
+import ProjectDetail from '@/app/projects/project-detail';
+import { ModalDetail } from '@/components/modal-detail';
 import ProjectCards from './(project-card)/card';
 
 export const metadata = {
@@ -57,6 +60,11 @@ export default function ProjectsPage() {
             <ProjectCards />
           </div>
         </div>
+        {/*임시 추가버튼*/}
+        <ProjectCreateForm />
+        <ModalDetail>
+          <ProjectDetail />
+        </ModalDetail>
       </div>
     </div>
   );
