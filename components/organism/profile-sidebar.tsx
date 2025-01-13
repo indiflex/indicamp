@@ -224,22 +224,11 @@ export default function ProfileSidebar() {
                     />
                     <div className='truncate'>
                       <span className='font-semibold text-gray-800 dark:text-gray-100'>
-                        Acme Inc.
+                        TODO:로그인한 사람
                       </span>
                     </div>
                   </div>
                 </div>
-                {/* Add button */}
-                <button className='p-1.5 shrink-0 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/60 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm ml-2'>
-                  <svg
-                    className='fill-current text-violet-500'
-                    width='16'
-                    height='16'
-                    viewBox='0 0 16 16'
-                  >
-                    <path d='M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1Z' />
-                  </svg>
-                </button>
               </div>
             </div>
           </div>
