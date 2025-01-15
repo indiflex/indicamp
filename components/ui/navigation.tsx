@@ -2,21 +2,23 @@ import logo from '@/public/indicamp+logo.png';
 import { Bell } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { auth } from '@/lib/auth';
 
-export default function Navigation() {
+export default async function Navigation() {
+  const session = await auth();
   return (
     <nav>
       <div className='flex items-center justify-between pt-7 pb-4 border-b shadow-md bg-white'>
-        <div className='flex relative px-8 font-bold'>
-          <strong className='text-2xl'>indicam</strong>
+        <Link href='/' className='flex relative px-8 font-bold'>
+          <strong className='text-3xl uppercase'>indicam</strong>
           <Image
             className='absolute right-1 bottom-0'
             src={logo}
-            alt='logo'
+            alt='indicamp logo'
             width='28'
             height='28'
           />
-        </div>
+        </Link>
         <div className='flex gap-24 text-lg text-gray-800'>
           <Link
             href='/about'
@@ -48,14 +50,18 @@ export default function Navigation() {
           <button>
             <Bell />
           </button>
-          <Link href='/login'>
-            <button
-              type='button'
-              className='text-lg text-blue-500 font-semibold hover:text-blue-300'
-            >
-              Login
-            </button>
-          </Link>
+          {session?.user?.email ? (
+            <Link href='/mypage'>{session.user.name}</Link>
+          ) : (
+            <Link href='/login'>
+              <button
+                type='button'
+                className='text-lg text-blue-500 font-semibold hover:text-blue-300'
+              >
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </nav>

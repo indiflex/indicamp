@@ -1,5 +1,17 @@
 import prisma from '@/lib/db';
-import AvatarPlaceholder from '@/components/avatar-placeholder';
+import AboutBlog from './blog';
+import Creatives from './creatives';
+import AboutCta from './cta';
+import Hero from './hero';
+import Hosts from './hosts';
+import LastProjectsCarousel from './last-projects';
+import LatestCamps from './latest-camps';
+import MainReviewsInAbout from './main_review';
+
+export const metadata = {
+  title: 'About - indicamp',
+  description: '인디캠프에 대해, 인디캠프 소개',
+};
 
 export default async function About() {
   const projecter = await prisma.projecter.findUnique({
@@ -13,13 +25,22 @@ export default async function About() {
   const cnt = await prisma.camp.count();
   console.log('🚀  projecter:', projecter, cnt);
   return (
-    <div className='my-5'>
-      <h1 className='text-3xl'>About @indicamp</h1>
+    <>
+      <Hero />
+      <LatestCamps />
+      <LastProjectsCarousel />
+      <Creatives />
+      <Hosts />
+      <MainReviewsInAbout />
+      <AboutBlog />
+      <AboutCta />
 
-      <AvatarPlaceholder name='홍길동' />
-      <AvatarPlaceholder name='Jade' />
-      <AvatarPlaceholder name='박' />
-      <AvatarPlaceholder name='o' />
-    </div>
+      {/* <div className='my-5'>
+        <AvatarPlaceholder name='홍길동' />
+        <AvatarPlaceholder name='Jade' />
+        <AvatarPlaceholder name='박' />
+        <AvatarPlaceholder name='ax' className='bg-red-500' />
+      </div> */}
+    </>
   );
 }

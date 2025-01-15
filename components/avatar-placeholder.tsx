@@ -18,8 +18,13 @@ export default function AvatarPlaceholder({
   );
 
   return (
-    <>
-      <div className={cn('avatar-placeholder uppercase', className)}>{nm}</div>
-    </>
+    <div
+      className={cn(
+        'uppercase bg-slate-700 text-white/75 size-8 text-center inline-block rounded-full mr-2 leading-8 cursor-pointer font-medium',
+        className
+      )}
+    >
+      {nm}
+    </div>
   );
 }

@@ -1,3 +1,7 @@
+import { FlyoutProvider } from '@/contexts/flyout-context';
+import ProfileSidebar from '@/components/organism/profile-sidebar';
+import { TermButton } from './(project-components)/term-button';
+
 export default function ProjectsLayout({
   children,
 }: {
@@ -5,16 +9,18 @@ export default function ProjectsLayout({
 }) {
   return (
     <>
-      <div className='flex mr-4 ml-4 mt-4'>
+      <div className='flex mr-4 ml-4 my-8'>
         <span>
-          <div className='border-2 pr-3 pl-3 pt-2 pb-2'>
-            <h3 className='text-lg font-bold'>term</h3>
-          </div>
-          <div className='border-2 pr-3 pl-3 pt-2 pb-2'>
-            <h3 className='text-lg font-bold'>term2</h3>
-          </div>
+          <TermButton />
         </span>
-        <span className='flex-grow border-4'>{children}</span>
+        <span className=' flex-grow rounded-xl  bg-blue-500 bg-opacity-10'>
+          {children}
+        </span>
+        <span>
+          <FlyoutProvider>
+            <ProfileSidebar />
+          </FlyoutProvider>
+        </span>
       </div>
     </>
   );
